@@ -10,8 +10,8 @@
 			 
 		</ul>
 		<ul class="list_index">
-			<li>A</li>
-			<li>B</li>
+			<li v-for="item in userdata">{{item.index}}</li>
+			
 		</ul>
 	</div>
 </template>
@@ -47,8 +47,12 @@
 	.list_index{
 		position: fixed;
 		right: 10px;
-		top: 50%;
-		font-size: 20px;
+		top: 16%;
+		font-size: 12px;
 		list-style: none;
+		padding: 4px;
+		line-height: 19px;
+		color: black;
+		opacity: 0.6;
 	}
 </style>
