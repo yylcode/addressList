@@ -11,7 +11,6 @@
 		</ul>
 		<ul class="list_index" ref="listIndex">
 			<li @touchstart="setScroll" v-for="item in userdata">{{item.index}}</li>
-			
 		</ul>
 	</div>
 </template>
