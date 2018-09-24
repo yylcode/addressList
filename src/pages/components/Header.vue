@@ -35,7 +35,7 @@
 	.content button{
 		height: 38px;
 		position: absolute;
-		padding: 5px;
+		padding: 10px;
 		top: 1px;
 		font-weight: bold;
 		color: black;

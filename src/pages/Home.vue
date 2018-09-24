@@ -2,12 +2,14 @@
 	<div>
 		<home-header></home-header>
 		<home-list :userdata="userdata"></home-list>
+		<home-alert></home-alert>
 		<div class="space"></div>
 	</div>
 </template>
 <script>
 	import HomeHeader from './components/Header'
 	import HomeList from './components/List'
+	import HomeAlert from './components/Alert'
 	import axios from 'axios'
 	export default{
 		name:'Home',
@@ -18,7 +20,8 @@
 		},
 		components:{
 			HomeHeader,
-			HomeList
+			HomeList,
+			HomeAlert
 		},
 		mounted(){
 			this.getUser()
