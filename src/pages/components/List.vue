@@ -1,10 +1,10 @@
 <template>
 	<div id="list">
-		<ul class="list_user" ref="listUser">
+		<ul class="list_user" ref="listUser" @touchmove="bMove=true">
 			<li v-for="item in userdata">
 				<p>{{item.index}}</p>
 				<ul>
-					<li v-for="user in item.user">{{user.name}}</li>
+					<li @touchend="showTel(user.tel)" v-for="user in item.user">{{user.name}}</li>
 				</ul>
 			</li>
 			 
@@ -25,14 +25,29 @@
 				}
 			}
 		},
+		data:function(){
+			return {
+				bMove:false
+			}
+		},
 		methods:{
 			
 			setScroll:function(ev){
+
+				 
 				var aP=this.$refs.listUser.getElementsByTagName('p');
 				for(var i=0;i<aP.length;i++){
 					if (aP[i].innerHTML==ev.target.innerHTML) {
 						document.documentElement.scrollTop=aP[i].offsetTop;
 					}
+				}
+			},
+			showTel:function(tel){
+				if(!this.bMove){
+					//console.log(tel);
+					this.$emit('changeEvents',tel);
+				}else{
+					this.bMove=false;
 				}
 			}
 		}
@@ -65,6 +80,6 @@
 		list-style: none;
 	}
 	.list_index li{
-		margin-top: 5px;
+		margin-top: 2px;
 	}
 </style>

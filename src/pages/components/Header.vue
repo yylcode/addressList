@@ -19,7 +19,7 @@
 		height: 40px;
 		width: 100%;
 		position: fixed;
-		z-index: 999;
+		z-index: 9;
 	}
 	.content{
 		height: 40px;
